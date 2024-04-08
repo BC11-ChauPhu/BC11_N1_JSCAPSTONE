@@ -4,15 +4,24 @@
 //Helper
 @import './helper/variable';
 @import './helper/mixin';
+
 //Base
 @import './base/reset';
 // @import './base/customize';
 // @import './base/responsive';
+
 //components
-// @import './components/button';
+@import './components/button';
+
 //layouts
 @import './layouts/header';
-@import './layouts/product-preview'
+
+
+//Home page
+@import './pages/Home/product-preview';
+@import './pages/Home/product-feature';
+
+
 // @import './layouts/carousel';
 
 //Pages

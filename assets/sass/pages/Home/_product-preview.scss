@@ -1,0 +1,31 @@
+#product-preview {
+    @include backgroundColor($color-dark-4);
+
+    @include styleText($color-white-3, $fs-1, $fw-1 );
+
+    .carousel-item{
+        padding: 0 100px !important;
+        gap: 3rem;
+    }
+
+    h5 {
+        font-size: 2rem;
+    }
+
+    p {
+        margin-top: 20px;
+        margin-bottom: 3rem;
+    }
+
+    img {
+        
+        height: auto;
+    }
+
+    .inner-content {
+        gap: 32px;
+    }
+    
+}
+
+

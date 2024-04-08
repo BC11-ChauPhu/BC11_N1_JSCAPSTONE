@@ -7,3 +7,12 @@
 @mixin backgroundColor($color) {
     background-color: $color;
 }
+
+@mixin buyButton($bg, $bd, $padding, $radius, $spacing, $transtion) {
+    background: $bg;
+    border: $bd;
+    padding: $padding;
+    border-radius: $radius;
+    letter-spacing: $spacing;
+    transition: $transtion;
+}

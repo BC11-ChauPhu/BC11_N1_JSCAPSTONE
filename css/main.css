@@ -7,7 +7,7 @@
 
 html, body {
   font-family: "Nunito Sans", sans-serif;
-  color: #f5f9fe;
+  color: #121212;
   font-size: 14px;
   font-weight: 400;
 }
@@ -16,6 +16,41 @@ html, body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.buyButton {
+  background: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  letter-spacing: 0.015rem;
+  transition: 0.5s;
+  color: #121212;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.buyButton:hover {
+  background: linear-gradient(to right, #121212, #353536);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  letter-spacing: 0.015rem;
+  transition: 0.5s;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.buyButtonInverted {
+  background: #f9d412;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  letter-spacing: 0.015rem;
+  transition: 0.5s;
+  color: #121212;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 header {
@@ -37,4 +72,59 @@ header .search-and-login form i {
 
 #product-preview {
   background-color: #212121;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+}
+#product-preview .carousel-item {
+  padding: 0 100px !important;
+  gap: 3rem;
+}
+#product-preview h5 {
+  font-size: 2rem;
+}
+#product-preview p {
+  margin-top: 20px;
+  margin-bottom: 3rem;
+}
+#product-preview img {
+  height: auto;
+}
+#product-preview .inner-content {
+  gap: 32px;
+}
+
+#product-feature h1 {
+  color: transparent;
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #121212, #656774);
+  background-clip: text;
+  text-align: center;
+}
+#product-feature h2 {
+  color: #f5f9fe;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+#product-feature img {
+  width: 100%;
+}
+#product-feature span {
+  color: #f5f9fe;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+#product-feature .featured-item {
+  background-color: #656774;
+  border-radius: 8px;
+}
+#product-feature .catalouge {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+#product-feature .catalouge-item {
+  padding: 0;
+  max-width: 100%;
 }/*# sourceMappingURL=main.css.map */
