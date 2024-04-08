@@ -1,0 +1,18 @@
+.buyButton {
+    @include buyButton ($color-white-3, none, 1rem 2rem, $bd-2, $ls-1, .5s);
+
+    @include styleText ($color-dark-2, $fs-2, $fw-3);
+
+    &:hover {
+        @include buyButton (linear-gradient(to right, $color-dark-2, $color-dark-3 ), none, 1rem 2rem, $bd-2, $ls-1, .5s);
+
+        @include styleText ($color-white-3, $fs-2, $fw-3);
+    }
+}
+
+.buyButtonInverted {
+    @include buyButton ($color-yellow-1, none, .5rem 1.5rem, $bd-2, $ls-1, .5s);
+
+    @include styleText ($color-dark-2, $fs-2, $fw-3);
+}
+

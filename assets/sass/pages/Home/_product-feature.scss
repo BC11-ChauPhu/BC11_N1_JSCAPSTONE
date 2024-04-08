@@ -1,0 +1,39 @@
+#product-feature {
+    h1 {
+        @include styleText(transparent, 3rem, 800);
+
+        background: linear-gradient(to right, $color-dark-2, $color-dark-1);
+        background-clip: text;
+        text-align: center;
+    } 
+
+    h2 {
+        @include styleText($color-white-1, $fs-3, $fw-2)
+    }
+
+    img  {
+        width: 100%;
+    }
+
+    span {
+        @include styleText($color-white-1, 1.5rem, $fw-2)
+    }
+
+    .featured-item {
+        @include backgroundColor($color-dark-1);
+
+        border-radius:  $bd-2;
+        
+    }
+
+    .catalouge {
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .catalouge-item {
+        padding: 0;
+        max-width: 100%;
+    }
+}
