@@ -5,10 +5,10 @@
 }
 
 @mixin backgroundColor($color) {
-    background-color: $color;
+    background: $color;
 }
 
-@mixin buyButton($bg, $bd, $padding, $radius, $spacing, $transtion) {
+@mixin button($bg, $bd, $padding, $radius, $spacing, $transtion) {
     background: $bg;
     border: $bd;
     padding: $padding;
@@ -16,3 +16,15 @@
     letter-spacing: $spacing;
     transition: $transtion;
 }
+
+@mixin border($bd, $br) {
+    border: $bd ;
+    border-radius: $br;
+}
+
+@mixin flexItem ($dp, $jtc, $ai) {
+    display: $dp;
+    justify-content: $jtc;
+    align-items: $ai;
+}
+

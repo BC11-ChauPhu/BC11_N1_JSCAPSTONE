@@ -1,0 +1,23 @@
+footer {
+    @include backgroundColor($color-dark-2);
+
+    @include styleText($color-dark-1, $fs-2, $fw-2);
+
+    span {
+        margin-right: 1rem;
+        @include styleText($color-blue-4, $fs-2, $fw-3);
+    }
+
+    h3 {
+        @include styleText($color-white-1, $fs-3, $fw-3);
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+
+    .home-contact {
+        border-bottom: 1px solid $color-dark-1;
+        padding-bottom: 20px;
+    }
+}
