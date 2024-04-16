@@ -12,17 +12,22 @@
 
 //components
 @import './components/button';
+@import './components/login';
 
 //layouts
 @import './layouts/header';
+@import './layouts/footer';
 
 
 //Home page
 @import './pages/Home/product-preview';
 @import './pages/Home/product-feature';
 
+// Product Details page
+@import './pages/Interface/product-details';
 
-// @import './layouts/carousel';
+// Cart Page
+@import './pages/Cart/Cart.scss'
 
 //Pages
 
