@@ -80,7 +80,7 @@ a:hover {
 }
 
 .signUpButton {
-  background: linear-gradient(19deg, #9599E2 0%, #9599E2 50%, #8BC6EC 100%);
+  background: linear-gradient(19deg, #9599e2 0%, #9599e2 50%, #8bc6ec 100%);
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
@@ -98,7 +98,7 @@ a:hover {
 }
 
 .closeButton {
-  background: linear-gradient(19deg, #9599E2 0%, #9599E2 50%, #8BC6EC 100%);
+  background: linear-gradient(19deg, #9599e2 0%, #9599e2 50%, #8bc6ec 100%);
   border: none;
   padding: 0;
   border-radius: 50%;
@@ -115,28 +115,252 @@ a:hover {
   top: -0.9375rem;
 }
 
-#login {
+.blur-bg-overlay {
   position: fixed;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
-  background: rgba(6, 3, 0, 0.77);
-  transition: 0.5s all;
-  z-index: 9999;
-}
-#login .container {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-#login .container form {
-  border: none;
-  border-radius: 10px;
-  background: white;
-  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  backdrop-filter: blur(5px);
+  transition: 0.1s ease;
 }
 
+.show-popup .blur-bg-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+.show-popup .form-popup {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease, opcity 0.1s;
+}
+
+.form-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 987px;
+  width: 100%;
+  min-height: 594px;
+  opacity: 0;
+  pointer-events: none;
+  background: #fff;
+  border: 2px solid #00bcd4;
+  transform: translate(-50%, -100%);
+}
+.form-popup .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #878484;
+  cursor: pointer;
+}
+.form-popup .form-box {
+  display: flex;
+}
+.form-popup .signup {
+  display: none;
+}
+
+.form-box .form-details {
+  min-width: 456px;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  padding: 0 20px;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.form-box .form-content {
+  width: 100%;
+  padding: 35px;
+}
+.form-box a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+.form-box a:hover {
+  text-decoration: underline;
+}
+.form-box .forgot-password {
+  display: inline-flex;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+.form-box .policy-text {
+  display: inline-flex;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+.form-box .bottom-link {
+  text-align: center;
+}
+.form-box .text-danger {
+  color: red;
+}
+
+.login .form-details {
+  background: url("https://brand.assets.adidas.com/image/upload/f_gif,fl_lossy,q_auto/ss24_ae_1_red_clay_launch_hp_tc_d_7b1457020b.gif");
+  background-size: cover;
+  background-position: center;
+  height: 720px;
+}
+
+.signup .form-details {
+  background: url("https://brand.assets.adidas.com/image/upload/f_gif,fl_lossy,q_auto/ss24_ae_1_red_clay_launch_hp_tc_d_7b1457020b.gif");
+  background-size: cover;
+  background-position: center;
+}
+.signup .policy-text {
+  display: flex;
+  align-items: center;
+}
+.signup .policy-text input {
+  width: 14px;
+  height: 14px;
+  margin-right: 7px;
+}
+
+form .input-field {
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+}
+form .input-field input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 0 15px;
+  font-size: 0.95rem;
+  border-radius: 3px;
+  border: 1px solid #717171;
+}
+form .input-field label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  color: #717171;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: 0.2s ease;
+}
+form .input-radio {
+  display: flex;
+  margin-top: 30px;
+  align-items: center;
+}
+form .input-radio .radio {
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+form .input-radio .radio input[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+form .input-radio .radio input[type=radio] + .radio-label:before {
+  content: "";
+  background: #f4f4f4;
+  border-radius: 100%;
+  border: 1px solid #b4b4b4;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  position: relative;
+  top: -0.2em;
+  margin-right: 1em;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  transition: all 250ms ease;
+}
+form .input-radio .radio input[type=radio] + .radio-label:empty:before {
+  margin-right: 0;
+}
+form .input-radio .radio input[type=radio]:checked + .radio-label:before {
+  background-color: #00bcd4;
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+form .input-radio .radio input[type=radio]:focus + .radio-label:before {
+  outline: none;
+  border-color: #00bcd4;
+}
+form .input-radio .radio input[type=radio]:disabled + .radio-label:before {
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+  border-color: #b4b4b4;
+  background: #b4b4b4;
+}
+form button {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 14px 0;
+  border-radius: 3px;
+  margin: 25px 0;
+  cursor: pointer;
+  background: #00bcd4;
+}
+form button:hover {
+  background: #0097a7;
+}
+
+.input-field input:focus {
+  border-color: #00bcd4;
+  color: #000;
+  padding: 16px 15px 0;
+}
+.input-field input:focus ~ label {
+  color: #00bcd4;
+  font-size: 0.75rem;
+  transform: translateY(-120%);
+}
+.input-field input:valid {
+  padding: 16px 15px 0;
+}
+.input-field input:valid ~ label {
+  color: #00bcd4;
+  font-size: 0.75rem;
+  transform: translateY(-120%);
+}
+
+.input-field.password span.eye {
+  position: absolute;
+  right: 15px;
+  transform: translate(0, -50%);
+  top: 50%;
+  cursor: pointer;
+}
+
+.form-popup.show-signup .login {
+  display: none;
+}
+.form-popup.show-signup .signup {
+  display: flex;
+}
+
+@media (max-width: 760px) {
+  .form-popup {
+    width: 95%;
+  }
+  .form-box .form-details {
+    display: none;
+  }
+  .form-box .form-content {
+    padding: 30px 20px;
+  }
+}
 header {
   background: #121212;
 }
@@ -162,7 +386,7 @@ footer {
 }
 footer span {
   margin-right: 1rem;
-  color: #8BC6EC;
+  color: #8bc6ec;
   font-size: 1.1rem;
   font-weight: 700;
 }
@@ -262,7 +486,7 @@ footer .home-contact {
   width: 40%;
 }
 #product-details .product-details-inner .detailed-body .detail-body-img {
-  background: #9599E2;
+  background: #9599e2;
   border-radius: 8px;
   width: 90%;
   margin: 0 auto;
@@ -280,10 +504,10 @@ footer .home-contact {
 }
 #product-details .product-details-inner .detailed-body .detail-body-text h2 {
   margin: 15px 0;
-  color: #8BC6EC;
+  color: #8bc6ec;
 }
 #product-details .product-details-inner .detailed-body .detail-body-text .price span {
-  background: #8BC6EC;
+  background: #8bc6ec;
   border-radius: 4px;
   font-size: 30px;
   padding: 5px;
@@ -301,7 +525,7 @@ footer .home-contact {
   margin-right: 5px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 50%;
-  background: #9599E2;
+  background: #9599e2;
   text-align: center;
 }
 #product-details .product-details-inner .detailed-body .detail-body-text .detail-body-sizes:hover {
@@ -358,7 +582,7 @@ footer .home-contact {
   width: 33.3333333333%;
 }
 #similar-product .similar-product-body .items-catalouge .item .item-img {
-  background: #9599E2;
+  background: #9599e2;
   border-radius: 8px 8px 0 0;
   padding: 1rem;
 }
@@ -368,7 +592,7 @@ footer .home-contact {
   padding: 5px;
 }
 #similar-product .similar-product-body .items-catalouge .item .item-body h3 {
-  color: #9599E2;
+  color: #9599e2;
   font-size: 1.8rem;
   font-weight: 600;
 }
@@ -380,7 +604,7 @@ footer .home-contact {
   align-items: center;
 }
 #similar-product .similar-product-body .items-catalouge .item .item-body .price span {
-  color: #9599E2;
+  color: #9599e2;
   font-size: 30px;
   font-weight: 400;
 }
