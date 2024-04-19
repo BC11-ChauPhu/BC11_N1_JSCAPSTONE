@@ -1,34 +1,30 @@
 //Vendor (import file scss, riêng file css gắn ở html)
 
-
 //Helper
-@import './helper/variable';
-@import './helper/mixin';
+@import "./helper/variable";
+@import "./helper/mixin";
 
 //Base
-@import './base/reset';
+@import "./base/reset";
 // @import './base/customize';
 // @import './base/responsive';
 
 //components
-@import './components/button';
-@import './components/login';
+@import "./components/button";
+@import "./components/popup";
 
 //layouts
-@import './layouts/header';
-@import './layouts/footer';
-
+@import "./layouts/header";
+@import "./layouts/footer";
 
 //Home page
-@import './pages/Home/product-preview';
-@import './pages/Home/product-feature';
+@import "./pages/Home/product-preview";
+@import "./pages/Home/product-feature";
 
 // Product Details page
-@import './pages/Interface/product-details';
+@import "./pages/Interface/product-details";
 
 // Cart Page
-@import './pages/Cart/Cart.scss'
-
-//Pages
+@import "./pages/Cart/Cart.scss"; //Pages
 
 //Theme

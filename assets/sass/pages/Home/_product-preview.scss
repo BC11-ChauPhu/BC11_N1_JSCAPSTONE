@@ -1,31 +1,79 @@
 #product-preview {
-    @include backgroundColor($color-dark-4);
+    // @include backgroundColor($color-dark-4);
+    margin-top: 3rem;
 
-    @include styleText($color-white-3, $fs-1, $fw-1 );
+    @include styleText($color-dark-2, $fs-1, $fw-1);
 
-    .carousel-item{
-        padding: 0 100px !important;
-        gap: 3rem;
+    .container {
+        background: rgba($color: #fff, $alpha: 0.65);
+        border-radius: $bd-2;
+        padding-bottom: 10px;
+
+        .carousel-control-next,
+        .carousel-control-prev {
+            @include styleText($color-dark-2, 3.125rem, $fw-3);
+        }
+
+        .carousel-title {
+            @include styleText(transparent, 3rem, 800);
+            background: linear-gradient(to right, $color-dark-4, $color-gradient-1);
+            background-clip: text;
+            text-align: center;
+            border-bottom: 1px solid rgba($color: $color-gradient-1, $alpha: 1);
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .carousel-item {
+            padding: 0 100px !important;
+
+            h5 {
+                @include styleText($color-gradient-1, $fs-3, $fw-2);
+                border-bottom: 1px solid rgba($color: $color-gradient-1, $alpha: 1);
+            }
+
+            p {
+                // margin-top: 20px;
+                margin-bottom: 5px;
+                border-bottom: 1px solid rgba($color: $color-gradient-1, $alpha: 1);
+
+            }
+
+            img {
+                // height: 100%;
+                width: 50%;
+                margin: auto;
+                display: block;
+            }
+            .inner-content {
+                display: flex;
+                align-items: center;
+                gap: 32px;
+
+                .carousel-description {
+                    padding: 5px;
+                    background: $color-white-3;
+                    border-radius: $bd-2;
+                    border: 2px solid rgba($color: $color-gradient-1, $alpha: 0.5);
+
+                    .carousel-price {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        span {
+                            @include styleText($color-gradient-1, 1.5rem, $fw-2);
+                        }
+                    }
+                }
+
+                .carousel-img-wrapper {
+                    width: 500px;
+                    background: $color-gradient-1;
+                    border-radius: $bd-2;
+                }
+            }
+            
+        }
     }
-
-    h5 {
-        font-size: 2rem;
-    }
-
-    p {
-        margin-top: 20px;
-        margin-bottom: 3rem;
-    }
-
-    img {
-        
-        height: auto;
-    }
-
-    .inner-content {
-        gap: 32px;
-    }
-    
 }
-
-

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N1_JSCAPSTONE</title>
+    <link rel="shortcut icon" href="./assets/img/328cc1f23e4a3b73aa60ee6ced1897a1.jpeg" type="image/x-icon">
     <!-- FONT GOOGLE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,26 +23,108 @@
 
 <body>
 
-    <section id="login" class="d-block">
-        <div class="container">
-            
-            <form class="w-50 mx-auto">
-                <button type="button" class="closeButton">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </button>
-                <h2>Sign up for a new account</h2>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <!-- popup form -->
+    <div class="blur-bg-overlay"></div>
+    <div class="form-popup">
+        <span class="close-btn">X</span>
+        <!-- Login -->
+        <div class="form-box login">
+            <div class="form-details">
+                <h2>WELLCOME BACK</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, iure ad nostrum a officiis
+                    consequuntur quia.</p>
+            </div>
+            <div class="form-content">
+                <h2>LOGIN</h2>
+                <form id="login" action="#">
+                    <div class="input-field">
+                        <input id="emailLogin" type="text" required>
+                        <label>Email</label>
+                        <span id="spanEmailLogin" class="text-danger"></span>
+                    </div>
+                    <div class="input-field password">
+                        <input id="passLogin" type="password" required class="pass" autocomplete="on">
+                        <span class="eye"><i class="fa-solid fa-eye"></i></span>
+                        <label>Password</label>
+                        <span id="spanPassLogin" class="text-danger"></span>
+                    </div>
+                    <a href="#" class="forgot-password">
+                        Forgot Password?
+                    </a>
+                    <button type="button" onclick="loginAccount()">Log In</button>
+                </form>
+                <div class="bottom-link">
+                    Don't have an account
+                    <a href="#" id="signup-link">Signup</a>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <button class="signUpButton mx-auto">Sign Up</button>
-            </form>
+            </div>
         </div>
-    </section>
+        <!--  -->
+        <div class="form-box signup">
+            <div class="form-details">
+                <h2>CREATE ACCOUNT</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, iure ad nostrum a officiis
+                    consequuntur quia.</p>
+            </div>
+            <div class="form-content">
+                <h2>SIGNUP</h2>
+                <form action="#">
+                    <div class="input-field">
+                        <input id="emailSignup" type="text" required>
+                        <label>Enter your Email</label>
+                        <span id="spanEmailSigup" class="text-danger"></span>
+                    </div>
+                    <div class="input-field password">
+                        <input id="passSignup" type="password" required class="pass" autocomplete="on">
+                        <span class="eye"><i class="fa-solid fa-eye"></i></span>
+                        <label>Create Password</label>
+                        <span id="spanPasslSigup" class="text-danger"></span>
+                    </div>
+                    <div class="input-field password">
+                        <input id="passConfirm" type="password" required class="pass" autocomplete="on">
+                        <span class="eye"><i class="fa-solid fa-eye"></i></span>
+                        <label>Password Confirm</label>
+                        <span id="spanPassConfirmSigup" class="text-danger"></span>
+                    </div>
+                    <div class="input-field">
+                        <input id="nameSignup" type="text" required>
+                        <label>Name</label>
+                        <span id="spanNameSigup" class="text-danger"></span>
+                    </div>
+                    <div class="input-field">
+                        <input id="phoneSignup" type="text" required>
+                        <label>Phone</label>
+                        <span id="spanPhoneSigup" class="text-danger"></span>
+                    </div>
+                    <div class="input-radio">
+                        <div>
+                            Gender:
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="male" name="options" value="male" checked>
+                            <label for="male" class="radio-label">Male</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="female" name="options" value="female">
+                            <label for="female" class="radio-label">Female</label>
+                        </div>
+                    </div>
+                    <div class="policy-text">
+                        <input type="checkbox" name="" id="policy">
+                        <label for="policy"> I agree the
+                            <a href="#">Terms & Condition</a>
+                        </label>
+                    </div>
+                    <button type="button" onclick="signupAccount()">Sign Up</button>
+                </form>
+                <div class="bottom-link">
+                    Already have an account
+                    <a href="#" id="login-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- popup form -->
 
     <header>
         <nav class="container navbar navbar-expand-lg">
@@ -52,7 +135,10 @@
                     <form class="mx-0 form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     </form>
-                    <button class="user ml-2 btn btn-outline-light"><i class="fa-solid fa-user"></i></button>
+                    <button class="cart ml-2 btn btn-outline-light">
+                        <a href="./assets/sass/pages/Cart/Cart.html"><i class="fa-solid fa-cart-shopping"></i></i></a>
+                    </button>
+                    <button class="login-btn user ml-2 btn btn-outline-light"><i class="fa-solid fa-user"></i></button>
                     <button class="ml-2 btn btn-outline-light"><i class="fa-solid fa-right-to-bracket"></i></button>
                 </div>
 
@@ -63,68 +149,22 @@
 
     <section id="product-preview">
         <div class="container">
-            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                </ol>
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="">
+                <h2 class="carousel-title">Popular Products</h2>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="inner-content d-flex align-items-center">
-                            <img src="./assets/img/adidas-prophere.png" class="d-block w-50" alt="...">
-                            <div class="d-none d-md-block w-50">
-                                <h5>Popular Product 1</h5>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ipsa ab fuga
-                                    consequatur, quisquam recusandae?</p>
-                                <button class="buyButton d-inline-flex">
-                                    <span class="mr-2"><i class="fa-solid fa-cart-shopping"></i></span>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="carousel-item">
-                        <div class="inner-content d-flex align-items-center">
-                            <img src="./assets/img/adidas-ultraboost-4.png" class="d-block w-50" alt="...">
-                            <div class="d-none d-md-block w-50">
-                                <h5>Popular Product 2</h5>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem tempora velit
-                                    obcaecati, nesciunt provident recusandae.</p>
-                                <button class="buyButton d-inline-flex">
-                                    <span class="mr-2"><i class="fa-solid fa-cart-shopping"></i></span>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="inner-content d-flex align-items-center">
-                            <img src="./assets/img/adidas-super-star-red.png" class="d-block w-50" alt="...">
-                            <div class="d-none d-md-block w-50">
-                                <h5>Popular Product 3</h5>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas vitae nemo ex
-                                    excepturi eaque ullam.</p>
-                                <button class="buyButton d-inline-flex">
-                                    <span class="mr-2"><i class="fa-solid fa-cart-shopping"></i></span>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-                <button class="carousel-control-prev justify-content-lg-start" type="button"
+                <button class="carousel-control-prev justify-content-lg-start " type="button"
                     data-target="#carouselExampleCaptions" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class=" text-dark" aria-hidden="true">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </span>
                     <span class="sr-only">Previous</span>
                 </button>
                 <button class="carousel-control-next justify-content-lg-end" type="button"
                     data-target="#carouselExampleCaptions" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="text-dark">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
                     <span class="sr-only">Next</span>
                 </button>
             </div>
@@ -132,353 +172,9 @@
     </section>
 
     <section id="product-feature">
-        <div class="container pt-5">
+        <div class="container pt-1">
             <h1>Product Feature</h1>
-
-            <div class="catalouge py-5 row">
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/adidas-prophere-black-white.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/adidas-prophere-customize.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/adidas-prophere.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/adidas-super-star-red.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/adidas-swift-run.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/adidas-tenisky-super-star.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/adidas-ultraboost-4.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/adidas-yeezy-350.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/converse-chuck-taylor.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/nike-adapt-bb.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/nike-air-max-270-react.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/nike-air-max-97-blue.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/nike-air-max-97.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/nike-flyknit.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/nike-react-element.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/nike-shox-tl.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/nike-sp-dunk.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/van-old-school.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="catalouge-item col-12 col-lg-4">
-
-                    <div class="featured-item py-4 px-4">
-                        <img src="./assets/img/vans-black-black.png" alt="">
-                        <div class="featured-text">
-                            <h2>Product Name</h2>
-                            <div class="price d-flex justify-content-between align-items-center pt-4">
-                                <span>$200.00</span>
-                                <button class="buyButton d-inline-flex align-items-center">
-                                    <i class="fa-solid fa-cart-shopping mr-2"></i>
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
+            <div id="catalouge-item" class="py-5 row">
             </div>
         </div>
     </section>
@@ -547,7 +243,12 @@
     <!-- BOOTSTRAP JAVASCRIPT -->
     <script src="./assets/sass/vendors/bootstrap.min.js"></script>
 
+    <!-- AXIOS -->
+    <script src="./assets/sass/vendors/Axios/node_modules/axios/dist/axios.min.js"></script>
+
+    <!-- CUSTOM JAVASCRIPT -->
     <script src='./controller/main.js'></script>
+    <script src="./controller/index.js"></script>
 </body>
 
 </html>

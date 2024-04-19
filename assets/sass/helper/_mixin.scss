@@ -9,7 +9,7 @@
 }
 
 @mixin button($bg, $bd, $padding, $radius, $spacing, $transtion) {
-    background: $bg;
+    background-image: $bg;
     border: $bd;
     padding: $padding;
     border-radius: $radius;
@@ -27,4 +27,5 @@
     justify-content: $jtc;
     align-items: $ai;
 }
+
 

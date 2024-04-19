@@ -9,20 +9,32 @@ $color-blue-3: #c9d8f4;
 $color-yellow-1: #f9d412;
 
 //dark color
-$color-dark-2:#121212;
-$color-dark-3:#353536;
-$color-dark-4:#212121;
-
-$color-blue-4:#8BC6EC;
-
-$color-gradient-1: #9599E2;
-$color-gradient-2: #485563;
-$color-gradient-3: #29323c;
-
+$color-dark-2: #121212;
+$color-dark-3: #353536;
+$color-dark-4: #212121;
 
 //gradident
-$box-gradient: #9599E2;
-
+$color-gradient-1: #9599e2;
+$color-gradient-2: #485563;
+$color-gradient-3: #29323c;
+$color-gradient-4: #8bc6ec;
+$gradient-1: linear-gradient(
+    to right,
+    $color-gradient-1 0,
+    $color-gradient-4 50%,
+    $color-gradient-1 100%
+);
+$gradient-2: linear-gradient(
+    90deg,
+    $color-gradient-2 0%,
+    $color-gradient-3 100%
+);
+$gradient-3: linear-gradient(
+    to right,
+    $color-gradient-4 0,
+    $color-gradient-1 50%,
+    $color-gradient-4 100%
+);
 //font size
 $fs-1: 14px;
 $fs-2: 1.1rem;
@@ -62,11 +74,20 @@ $mg-4: 60px;
 $bd-1: 2px;
 $bd-2: 8px;
 
-
 //break points
 $breakpoints: (
     "extra-large": 1200px,
     "large": 992px,
     "medium": 768px,
-    "small": 576px
+    "small": 576px,
 );
+
+// popup
+$form_color_1: #878484;
+$form_color_2: #fff;
+$form_color_3: #000;
+$form_color_4: #717171;
+$form_color_5: #00bcd4;
+$background-form_color_1: #00bcd4;
+$border-form_color_1: #00bcd4;
+$border-form_color_2: #b4b4b4;

@@ -2,18 +2,28 @@ header {
     @include backgroundColor($color-dark-2);
 
     .navbar-brand {
-        @include styleText($color-white-1, $fs-3, $fw-3)
+        @include styleText($color-white-1, $fs-3, $fw-3);
     }
 
-    .search-and-login { 
+    .search-and-login {
         position: relative;
     }
 
     .search-and-login form i {
         position: absolute;
-        right: 4.375rem;        
+        right: 4.375rem;
         color: $color-dark-2;
     }
 
-}
+    .cart {
+        a {
+            color: white;
+        }
 
+        &:hover {
+            a {
+                color: $color-dark-2;
+            }
+        }
+    }
+}

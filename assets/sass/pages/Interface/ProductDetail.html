@@ -44,18 +44,20 @@
     <header>
         <nav class="container navbar navbar-expand-lg">
             <div class="container py-3  justify-content-between">
-                <a class="mx-0 navbar-brand" href="#">Sample</a>
+                <a class="mx-0 navbar-brand" href="../../../../index.html">Sample</a>
 
                 <div class="d-flex search-and-login">
                     <form class="mx-0 form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     </form>
-                    <button class="cart ml-2 btn btn-outline-light"><i class="fa-solid fa-cart-shopping"></i></i></button>
+                    <button class="cart ml-2 btn btn-outline-light">
+                        <a href="../Cart/Cart.html"><i class="fa-solid fa-cart-shopping"></i></i></a>
+                    </button>
                     <button class="user ml-2 btn btn-outline-light"><i class="fa-solid fa-user"></i></button>
                     <button class="ml-2 btn btn-outline-light"><i class="fa-solid fa-right-to-bracket"></i></button>
                 </div>
 
-                
+
             </div>
         </nav>
     </header>
@@ -267,7 +269,11 @@
     <!-- BOOTSTRAP JAVASCRIPT -->
     <script src="../../vendors/bootstrap.min.js"></script>
 
-    <script src="../../../../controller/main.js"></script>
+    <!-- AXIOS -->
+    <script src="../../vendors/Axios/node_modules/axios/dist/axios.min.js"></script>
+
+    <!-- CUSTOM JAVASCRIPT -->
+    <script src='../../../../controller/main.js'></script>
 </body>
 
 </html>

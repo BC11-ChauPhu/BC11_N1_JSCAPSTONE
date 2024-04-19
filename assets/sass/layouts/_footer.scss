@@ -5,7 +5,7 @@ footer {
 
     span {
         margin-right: 1rem;
-        @include styleText($color-blue-4, $fs-2, $fw-3);
+        @include styleText($color-gradient-4, $fs-2, $fw-3);
     }
 
     h3 {
