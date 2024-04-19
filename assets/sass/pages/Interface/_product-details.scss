@@ -27,7 +27,7 @@
             }
 
             .detail-body-img {
-                background: $box-gradient;
+                background: $color-gradient-2;
                 border-radius: $bd-2;
                 width: 90%;
                 margin: 0 auto;
@@ -45,12 +45,12 @@
 
                 h2 {
                     margin: 15px 0;
-                    color: $color-blue-4;
+                    color: $color-gradient-4;
                 }
 
                 .price {
                     span {
-                        background: $color-blue-4;
+                        background: $color-gradient-4;
                         border-radius: 4px;
                         font-size: 30px;
                         padding: 5px;
@@ -140,7 +140,7 @@
                 width: calc(100% / 3);
     
                 .item-img {
-                    background: $box-gradient;
+                    background: $color-gradient-1;
                     border-radius: 8px 8px 0 0;
                     padding: 1rem;
                 }

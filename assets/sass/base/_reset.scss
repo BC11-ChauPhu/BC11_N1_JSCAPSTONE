@@ -3,31 +3,40 @@
     padding: 0;
     list-style: none;
     box-sizing: border-box;
-}
 
-html, body {
-    font-family: "Nunito Sans", sans-serif;
-    @include styleText($color-dark-2, $fs-1, $fw-1 );
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-} 
-
-p {
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    text-decoration: none;
-    color: $color-dark-1;
-    transition: .5s;
-
-    &:hover {
-        text-decoration: none;
-        color: $color-white-1
+    html, body {
+        font-family: "Nunito Sans", sans-serif;
+        @include styleText($color-dark-2, $fs-1, $fw-1 );
+        background: rgba($color: $color-gradient-1, $alpha: 0.3);
+    
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        } 
+        
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    
+        a {
+            text-decoration: none;
+            color: white;
+            transition: .5s;
+        
+            &:hover {
+                text-decoration: none;
+                color: $color-white-1
+            }
+        }
     }
 }
+
+
+
+
+
+
+
+
