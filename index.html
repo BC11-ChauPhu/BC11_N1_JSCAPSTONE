@@ -23,26 +23,108 @@
 
 <body>
 
-    <section id="login" class="d-none">
-        <div class="container">
-
-            <form class="w-50 mx-auto">
-                <button type="button" class="closeButton">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </button>
-                <h2>Sign up for a new account</h2>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <!-- popup form -->
+    <div class="blur-bg-overlay"></div>
+    <div class="form-popup">
+        <span class="close-btn">X</span>
+        <!-- Login -->
+        <div class="form-box login">
+            <div class="form-details">
+                <h2>WELLCOME BACK</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, iure ad nostrum a officiis
+                    consequuntur quia.</p>
+            </div>
+            <div class="form-content">
+                <h2>LOGIN</h2>
+                <form id="login" action="#">
+                    <div class="input-field">
+                        <input id="emailLogin" type="text" required>
+                        <label>Email</label>
+                        <span id="spanEmailLogin" class="text-danger"></span>
+                    </div>
+                    <div class="input-field password">
+                        <input id="passLogin" type="password" required class="pass" autocomplete="on">
+                        <span class="eye"><i class="fa-solid fa-eye"></i></span>
+                        <label>Password</label>
+                        <span id="spanPassLogin" class="text-danger"></span>
+                    </div>
+                    <a href="#" class="forgot-password">
+                        Forgot Password?
+                    </a>
+                    <button type="button" onclick="loginAccount()">Log In</button>
+                </form>
+                <div class="bottom-link">
+                    Don't have an account
+                    <a href="#" id="signup-link">Signup</a>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <button class="signUpButton mx-auto">Sign Up</button>
-            </form>
+            </div>
         </div>
-    </section>
+        <!--  -->
+        <div class="form-box signup">
+            <div class="form-details">
+                <h2>CREATE ACCOUNT</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, iure ad nostrum a officiis
+                    consequuntur quia.</p>
+            </div>
+            <div class="form-content">
+                <h2>SIGNUP</h2>
+                <form action="#">
+                    <div class="input-field">
+                        <input id="emailSignup" type="text" required>
+                        <label>Enter your Email</label>
+                        <span id="spanEmailSigup" class="text-danger"></span>
+                    </div>
+                    <div class="input-field password">
+                        <input id="passSignup" type="password" required class="pass" autocomplete="on">
+                        <span class="eye"><i class="fa-solid fa-eye"></i></span>
+                        <label>Create Password</label>
+                        <span id="spanPasslSigup" class="text-danger"></span>
+                    </div>
+                    <div class="input-field password">
+                        <input id="passConfirm" type="password" required class="pass" autocomplete="on">
+                        <span class="eye"><i class="fa-solid fa-eye"></i></span>
+                        <label>Password Confirm</label>
+                        <span id="spanPassConfirmSigup" class="text-danger"></span>
+                    </div>
+                    <div class="input-field">
+                        <input id="nameSignup" type="text" required>
+                        <label>Name</label>
+                        <span id="spanNameSigup" class="text-danger"></span>
+                    </div>
+                    <div class="input-field">
+                        <input id="phoneSignup" type="text" required>
+                        <label>Phone</label>
+                        <span id="spanPhoneSigup" class="text-danger"></span>
+                    </div>
+                    <div class="input-radio">
+                        <div>
+                            Gender:
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="male" name="options" value="male" checked>
+                            <label for="male" class="radio-label">Male</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="female" name="options" value="female">
+                            <label for="female" class="radio-label">Female</label>
+                        </div>
+                    </div>
+                    <div class="policy-text">
+                        <input type="checkbox" name="" id="policy">
+                        <label for="policy"> I agree the
+                            <a href="#">Terms & Condition</a>
+                        </label>
+                    </div>
+                    <button type="button" onclick="signupAccount()">Sign Up</button>
+                </form>
+                <div class="bottom-link">
+                    Already have an account
+                    <a href="#" id="login-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- popup form -->
 
     <header>
         <nav class="container navbar navbar-expand-lg">
@@ -56,7 +138,7 @@
                     <button class="cart ml-2 btn btn-outline-light">
                         <a href="./assets/sass/pages/Cart/Cart.html"><i class="fa-solid fa-cart-shopping"></i></i></a>
                     </button>
-                    <button class="user ml-2 btn btn-outline-light"><i class="fa-solid fa-user"></i></button>
+                    <button class="login-btn user ml-2 btn btn-outline-light"><i class="fa-solid fa-user"></i></button>
                     <button class="ml-2 btn btn-outline-light"><i class="fa-solid fa-right-to-bracket"></i></button>
                 </div>
 
@@ -73,7 +155,7 @@
                 </div>
                 <button class="carousel-control-prev justify-content-lg-start " type="button"
                     data-target="#carouselExampleCaptions" data-slide="prev">
-                    <span class=" text-dark" aria-hidden="true" >
+                    <span class=" text-dark" aria-hidden="true">
                         <i class="fa-solid fa-chevron-left"></i>
                     </span>
                     <span class="sr-only">Previous</span>
@@ -92,8 +174,8 @@
     <section id="product-feature">
         <div class="container pt-1">
             <h1>Product Feature</h1>
-                <div id="catalouge-item" class="py-5 row">
-                </div>
+            <div id="catalouge-item" class="py-5 row">
+            </div>
         </div>
     </section>
 
