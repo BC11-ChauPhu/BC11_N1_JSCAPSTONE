@@ -1,3 +1,12 @@
+let products = [];
+
+let pushProducts = (data) => {
+    products.push(...data);
+}
+
+// Sử dụng hàm
+console.log(products);
+
 let showProductPreview = (products) => {
     console.log(products)
     let content = ''
@@ -44,7 +53,7 @@ let showProductFeatures = (products) => {
                 <h2>${product.name}</h2>
                 <p>${product.description}</p>
                 <div class="price d-flex justify-content-between align-items-center">
-                    <button class="buyButtonInverted d-inline-flex align-items-center">
+                    <button class="buyButtonInverted d-inline-flex align-items-center" data-id="${product.id}">
                         <i class="fa-solid fa-cart-shopping mr-2"></i>
                         Buy Now
                     </button>
@@ -58,7 +67,6 @@ let showProductFeatures = (products) => {
     getElement('#catalouge-item').innerHTML = content
 
 }
-
 let getProduct = () => {
     let objAxios = axios({
         meothod: 'get',
@@ -68,6 +76,7 @@ let getProduct = () => {
         // console.log(result.data.content)
         showProductPreview(result.data.content)
         showProductFeatures(result.data.content)
+        pushProducts(result.data.content)
     }).catch(function (error) {
         console.log(error)
     })
