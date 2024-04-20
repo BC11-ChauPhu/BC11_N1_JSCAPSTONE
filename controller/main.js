@@ -215,7 +215,166 @@ function signupAccount() {
 
 
     }
-
-
 }
 // popup end
+
+
+
+// cart start
+// let products = [];
+let cart = [];
+
+const showCart = () => {
+    document.querySelector(".cart").classList.add("show");
+    document.querySelector(".cart-overlay").classList.add("show");
+};
+
+const hideCart = () => {
+    document.querySelector(".cart").classList.remove("show");
+    document.querySelector(".cart-overlay").classList.remove("show");
+};
+const saveCart = () => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+};
+const clearCart = () => {
+    cart = [];
+    saveCart();
+    renderCart();
+    getProduct()
+    setTimeout(hideCart, 500);
+};
+const addToCart = (e) => {
+    if (e.target.hasAttribute("data-id")) {
+        // console.log("add item");
+
+        const id = parseInt(e.target.dataset.id);
+        const inCart = cart.find((x) => x.id === id);
+
+        if (inCart) {
+            alert("Item is already in cart.");
+            return;
+        }
+        cart.push({ id, qty: 1 });
+        saveCart();
+        renderCart();
+        showCart();
+    }
+
+    console.log(cart);
+    // console.log(e.target);
+}
+
+const updateCart = (e) => {
+    if (e.target.hasAttribute("data-btn")) {
+        const cartItem = e.target.closest(".cart-item");
+        const id = parseInt(cartItem.dataset.id);
+        const btn = e.target.dataset.btn;
+
+        btn === "incr" && increaseQty(id);
+        btn === "decr" && decreaseQty(id);
+
+        saveCart();
+        renderCart();
+    }
+};
+
+
+
+document.querySelector(".cart-btn").addEventListener("click", showCart)
+document.querySelector(".cart-overlay").addEventListener("click", hideCart);
+document.querySelector(".cart-close").addEventListener("click", hideCart);
+document.querySelector(".cart-body").addEventListener("click", updateCart);
+document.querySelector(".cart-clear").addEventListener("click", clearCart);
+
+document.querySelector("#catalouge-item").addEventListener("click", addToCart);
+// cart end
+
+// console.log(products);
+const renderCart = () => {
+    // show cart qty in navbar
+    document.querySelector(".cart-qty").textContent = cart.reduce((sum, item) => {
+        return sum + item.qty;
+    }, 0);
+
+
+    // document.querySelector(".cart-qty").textContent = cartQty;
+    // document.querySelector(".cart-qty").classList.toggle("visible", cartQty);
+
+    // show cart total
+    document.querySelector(".cart-total").textContent = calculateTotal();
+
+    // show empty cart
+    if (cart.length === 0) {
+        document.querySelector(".cart-body").innerHTML =
+            '<div class="cart-empty">Your cart is empty.</div>';
+        return;
+    }
+
+
+
+
+    // show cart items
+    document.querySelector(".cart-body").innerHTML = cart.map(({ id, qty }) => {
+        // get product info of each cart item
+        const product = products.find((x) => x.id === id);
+        const { name, image, price } = product;
+        const amount = price * qty;
+        return `
+      <div class="cart-item" data-id="${id}">
+        <img src="${image}" alt="${name}" />
+        <div class="cart-item-detail">
+          <h3>${name}</h3>
+          <h5>${price}</h5>
+          <div class="cart-item-amount">
+          <i class="fa-solid fa-minus" data-btn="decr"></i>
+          <span class="qty">${qty}</span>
+          <i class="fa-solid fa-plus" data-btn="incr"></i>
+          <span class="cart-item-price">
+              ${amount}
+            </span>
+          </div>
+        </div>
+      </div>`;
+    }).join("");
+}
+// console.log(products);
+
+
+const removeFromCart = (id) => {
+    cart = cart.filter((x) => x.id !== id);
+
+    // if the last item is remove, close the cart
+    cart.length === 0 && setTimeout(hideCart, 500);
+
+    getProduct()
+};
+
+
+const increaseQty = (id) => {
+    const item = cart.find((x) => x.id === id);
+    if (!item) return;
+
+    item.qty++;
+};
+
+const decreaseQty = (id) => {
+    const item = cart.find((x) => x.id === id);
+    if (!item) return;
+
+    item.qty--;
+
+    if (item.qty === 0) removeFromCart(id);
+};
+
+
+const calculateTotal = () => {
+    return cart
+        .map(({ id, qty }) => {
+            const { price } = products.find((x) => x.id === id);
+
+            return qty * price;
+        })
+        .reduce((sum, number) => {
+            return sum + number;
+        }, 0);
+};
