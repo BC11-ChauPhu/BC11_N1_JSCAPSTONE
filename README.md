@@ -2,5 +2,8 @@
 
 Thành viên:
 
-- Châu Phú
-- Nguyễn Chí Thông
+-   Châu Phú
+    -
+-   Nguyễn Chí Thông
+    -   Login,Signup : UI + chức năng
+    -   Cart : UI + chưc năng
