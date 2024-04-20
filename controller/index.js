@@ -5,10 +5,10 @@ let pushProducts = (data) => {
 }
 
 // Sử dụng hàm
-console.log(products);
+// console.log(products);
 
 let showProductPreview = (products) => {
-    console.log(products)
+    // console.log(products)
     let content = ''
     let key = 0
     products.slice(0, 3).map(function (product, index) {
