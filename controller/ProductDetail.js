@@ -90,7 +90,6 @@ let showProductDetail = (products) => {
     getElement('.detail-body-sizes').innerHTML = productSize
 
     let similarProducts = ''
-    console.log(products.relatedProducts)
     products.relatedProducts.map(function (product) {
         similarProducts += `
         <div class="item">
