@@ -5,12 +5,14 @@
     }
 
     h2 {
-        @include styleText($color-white-3, $fs-3, $fw-3);
-        border-bottom: 1px solid rgba(355, 355, 355, 0.5);
+        @include styleText(transparent, $fs-3, 800);
+        background: linear-gradient(to right, $color-dark-4, $color-gradient-1);
+        background-clip: text;
+        border-bottom: 1px solid rgba($color: $color-gradient-1, $alpha: 1);
     }
 
     .container {
-        background-image: linear-gradient(to right, $color-gradient-2 50%, $color-gradient-3 100%);
+        background: rgba($color: #fff, $alpha: 0.65);
         border-radius: $bd-2;
     }
 
@@ -27,7 +29,7 @@
             }
 
             .detail-body-img {
-                background: $color-gradient-2;
+                background: $color-gradient-1;
                 border-radius: $bd-2;
                 width: 90%;
                 margin: 0 auto;
@@ -38,19 +40,20 @@
                 padding-right: 10px;
 
                 p {
-                    @include styleText($color-white-3, $fs-2, $fw-1);
-                    border-bottom: 1px solid rgba(355, 355, 355, 0.5);
+                    @include styleText($color-dark-2, $fs-2, $fw-1);
+                    border-bottom: 1px solid rgba($color: $color-gradient-1, $alpha: 1);
                     padding: 10px 0;
                 }
 
                 h2 {
                     margin: 15px 0;
-                    color: $color-gradient-4;
+                    color: $color-gradient-1;
                 }
 
                 .price {
                     span {
-                        background: $color-gradient-4;
+                        color: $color-white-3;
+                        background: $color-gradient-1;
                         border-radius: 4px;
                         font-size: 30px;
                         padding: 5px;
@@ -58,7 +61,7 @@
                 }
 
                 .detail-body-sizes {
-                    border-bottom: 1px solid rgba(355, 355, 355, 0.5);
+                    border-bottom: 1px solid rgba($color: $color-gradient-1, $alpha: 1);
                     margin: 0;
                     padding-bottom: 1rem;
 
@@ -68,7 +71,7 @@
                         width: 40px;
                         line-height: 40px;
                         margin-right: 5px;
-                        border: 1px solid rgba(0, 0, 0, 0.5);
+                        border: none;
                         border-radius: 50%;
                         background: $color-gradient-1;
 
@@ -81,7 +84,7 @@
                 }
 
                 .detail-body-number {
-                    padding: 1rem 0;
+                    padding: .5rem 0;
 
                     .detail-body-number-amount {
                         button {
@@ -98,10 +101,6 @@
                             background: white;
                         }
                     }
-
-                    .detail-body-number-cart {
-                        padding-top: 10px;
-                    }
                 }
             }
         }
@@ -115,7 +114,7 @@
     }
 
     .container {
-        background-image: linear-gradient(to right, $color-gradient-2 50%, $color-gradient-3 100%);
+        background: rgba($color: #fff, $alpha: 0.65);
         border-radius: $bd-2;
     }
 
@@ -123,28 +122,29 @@
         padding: 1rem;
 
         h2 {
-            @include styleText($color-white-3, $fs-3, $fw-3);
-            border-bottom: 1px solid rgba(355, 355, 355, 0.5);
+            @include styleText(transparent, $fs-3, 800);
+            background: linear-gradient(to right, $color-dark-4, $color-gradient-1);
+            background-clip: text;
+            border-bottom: 1px solid rgba($color: $color-gradient-1, $alpha: 1);
         }
     }
 
     .similar-product-body {
-
         padding: 1rem;
 
         .items-catalouge {
             display: flex;
             gap: 1.25rem;
-    
+
             .item {
                 width: calc(100% / 3);
-    
+
                 .item-img {
                     background: $color-gradient-1;
                     border-radius: 8px 8px 0 0;
                     padding: 1rem;
                 }
-    
+
                 .item-body {
                     background: white;
                     border-radius: 0 0 8px 8px;
@@ -165,11 +165,6 @@
                     }
                 }
             }
-    
-    
         }
-
     }
-
-    
 }

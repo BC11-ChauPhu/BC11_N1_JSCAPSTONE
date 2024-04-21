@@ -260,7 +260,6 @@ const addToCart = (e) => {
         showCart();
     }
 
-    console.log(cart);
     // console.log(e.target);
 }
 
