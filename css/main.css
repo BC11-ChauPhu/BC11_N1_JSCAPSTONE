@@ -598,7 +598,7 @@ footer .home-contact {
   cursor: pointer;
 }
 #product-details .product-details-inner .detailed-body .detail-body-text .detail-body-number {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 #product-details .product-details-inner .detailed-body .detail-body-text .detail-body-number .detail-body-number-amount button {
   color: #121212;
@@ -615,9 +615,6 @@ footer .home-contact {
   border-radius: 8px;
   padding: 7px 15px;
   background: white;
-}
-#product-details .product-details-inner .detailed-body .detail-body-text .detail-body-number .detail-body-number-cart {
-  padding-top: 10px;
 }
 
 #similar-product img {

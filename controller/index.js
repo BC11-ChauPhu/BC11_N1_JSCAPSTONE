@@ -24,7 +24,7 @@ let showProductPreview = (products) => {
                     <p>'${product.description}'</p>
                     <div class="carousel-price">
                         <button class="buyButtonInverted d-inline-flex">             
-                            <a href="./assets/sass/pages/Interface/ProductDetail.html">
+                            <a href="./assets/sass/pages/Interface/ProductDetail.html?productid=${product.id}">
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 Buy Now
                             </a>
@@ -48,7 +48,10 @@ let showProductFeatures = (products) => {
     products.map(function (product) {
         content += `
         <div class="featured-item col-4">
-            <img src=${product.image} alt="">
+            <a href="./assets/sass/pages/Interface/ProductDetail.html?productid=${product.id}">
+                <img src=${product.image}>
+            </a>
+            
             <div class="featured-text">
                 <h2>${product.name}</h2>
                 <p>${product.description}</p>

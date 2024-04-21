@@ -128,7 +128,7 @@
     <header>
         <nav class="container navbar navbar-expand-lg">
             <div class="container py-3  justify-content-between">
-                <a class="mx-0 navbar-brand" href="#">Sample</a>
+                <a class="mx-0 navbar-brand" href="../../../../index.html">Sample</a>
 
                 <div class="d-flex search-and-login">
                     <form class="mx-0 form-inline my-2 my-lg-0">
@@ -152,7 +152,7 @@
         <div class="container">
             <div class="product-details-inner my-lg-5">
 
-                <div class="product-header">
+                <!-- <div class="product-header">
                     <h2>Product Name</h2>
                 </div>
                 <div class="product-body">
@@ -202,7 +202,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -298,7 +298,6 @@
 
 
 
-
     <!-- FONT AWESOME JAVASCRIPT -->
     <script src="https://kit.fontawesome.com/cde141b017.js" crossorigin="anonymous"></script>
 
@@ -314,6 +313,10 @@
     <!-- CUSTOM JAVASCRIPT -->
     <script src='../../../../controller/main.js'></script>
     <script src="../../../../controller/ProductDetail.js"></script>
+    <script>
+        document.querySelector("#product-details").addEventListener("click", addToCart)
+    </script>
 </body>
 
 </html>
+
